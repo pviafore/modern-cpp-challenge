@@ -1,6 +1,6 @@
 
 CURDIR = $(shell pwd)
-DOCKER=docker run -it -v $(CURDIR):/root/modern-cpp:rw modern-cpp
+DOCKER=docker run -it -v $(CURDIR):/root/modern:rw modern-cpp
 CHALLENGE?=1
 CPPFILES = challenge$(CHALLENGE).cpp
 run: static-analysis
