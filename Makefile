@@ -11,10 +11,10 @@ static-analysis: build
 		$(DOCKER) clang-tidy $(CPPFILES) --checks="*" --warnings-as-errors="*" -- -I. -std=c++1z
 
 build:
-		$(DOCKER) g++-7 -g $(CPPFILES) -I. -std=c++17 -o test -Werror -Wall -Wextra -pedantic
+		$(DOCKER) g++ -g $(CPPFILES) -I. -std=c++17 -o test -Werror -Wall -Wextra -pedantic
 
 docker:
-		docker build -t modern-cpp .
+		docker build -t modern-cpp . 
 
 shell:
 		$(DOCKER) /bin/bash
